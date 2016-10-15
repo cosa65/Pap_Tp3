@@ -4,15 +4,17 @@
 #include <cstdlib>
 
 using namespace std;
-//Asumiendo que los chares son minusculas
 
-string& SSS (const char* s)
-{
-    return *(new std::string(s));
+bool minuscula(char letter) {
+	return (int)letter - 97 >= 0;
 }
 
 int pos(char letter) {
-	return (int)letter - 97;
+	if (minuscula(letter)){
+		return (int)letter - 97;
+	} else {
+		return (int)letter - 65;
+	}
 }
 
 class WeightedTrie {
