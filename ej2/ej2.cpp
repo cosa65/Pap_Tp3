@@ -13,7 +13,7 @@ int pos(char letter) {
 	if (minuscula(letter)){
 		return (int)letter - 97;
 	} else {
-		return (int)letter - 65;
+		return (int)letter - 65 + 26;
 	}
 }
 
@@ -43,7 +43,7 @@ private:
 };
 
 WeightedTrie::Node::Node() {
-	this->childs.resize(26);
+	this->childs.resize(52);
 	this->weight = 0;
 }
 
