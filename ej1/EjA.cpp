@@ -17,16 +17,16 @@ vector<int> tablaBordes(string t){
 }
 
 int main(){
-	string t;
-	string s;
-	cin >> t >> s;
-	vector<int> bordes = tablaBordes(t);
+	string nombre;
+	string apodo;
+	cin >> nombre >> apodo;
+	vector<int> bordes = tablaBordes(apodo);
 	int i=0, j=0;
-	while(i <= t.size() - s.size()){
-		if(j == s.size()){
+	while(i <= nombre.size() - apodo.size()){
+		if(j == apodo.size()){
 			cout << 'S'<< endl;
 			return 0;
-		} else if(s[j] != t[i+j]){
+		} else if(apodo[j] != nombre[i+j]){
 			i = i + max(1, j-bordes[j]); //i++;
 			j = max(0,bordes[j]); //j=0;
 		} else {
